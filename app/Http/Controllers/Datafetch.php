@@ -10,10 +10,9 @@ class Datafetch extends Controller
     public function saveApiData()
     {
         $client = new Client();
-        $res = $client->request('POST', 'https://graph.instagram.com/v/', [
+        $res = $client->request('POST', 'https://genderapi.io/api/', [
             'form_params' => [
-                 '780166575',
-                 'media',
+                'name' => 'gyan',
             ]
         ]);
 
