@@ -15,3 +15,4 @@ use App\Http\Controllers\Datafetch;
 */
 
 Route::get('/',[Datafetch::class,'saveApiData']);
+
