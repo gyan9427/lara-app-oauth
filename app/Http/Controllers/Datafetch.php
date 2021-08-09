@@ -13,12 +13,13 @@ class Datafetch extends Controller
         $res = $client->request('GET', 'https://api.instagram.com/oauth/authorize', [
             'form_params' => [
                 'client_id' => '862746144637944',
-                'redirect_uri' => 'https://google.com',
+                'redirect_uri' => 'https://www.google.com',
                 'scope' => 'user_profile,user_media',
                 'response_type' => 'code',
             ]
         ]);
-
-        dd($res);
+        dd($res->getHeader("ig-set-password-encryption-web-pub-key"))
+;
+        return view("insta-connect",['response'=>$res]);
     }
 }
